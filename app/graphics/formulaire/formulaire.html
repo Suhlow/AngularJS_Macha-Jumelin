@@ -1,0 +1,33 @@
+<p> <strong>{{ monrestaurant.nom }}</strong></p>
+    <form class="pure-form" name="myForm" novalidate>
+        <div>
+            <span>Date : </span>
+            <input type="text" name="date" ng-model="monrestaurant.date" required/>
+            <span ng-show="myForm.date.$dirty && myForm.date.$invalid && myForm.date.$error.required ">
+          Champs obligatoire <!-- ça s'affiche si on tape et qu'on revient en arrière -->
+            </span>
+        </div>
+
+        <div>
+            <span>Note :</span>
+            <input type="text"  name="note" ng-model="monrestaurant.note" required/>
+            <span ng-show="myForm.date.$dirty && myForm.date.$invalid && myForm.date.$error.required ">
+          Champs obligatoire
+        </span>
+        </div>
+
+        <div>
+            <span>Commentaire : </span>
+            <input type="text" name="commentaire" ng-model="monrestaurant.commentaire" required/>
+            <span ng-show="myForm.date.$dirty && myForm.date.$invalid && myForm.date.$error.required ">
+          Champs obligatoire
+            </span>
+        </div>
+
+        <div>
+            <!-- Bouton valider -->
+            <button type="button" ng-click="valider()" ng-disabled="myform.$invalid">Valider</button>
+            <!-- Bouton annuler -->
+            <button type="button" ng-click="annuler()">Annuler</button>
+        </div>
+    </form>

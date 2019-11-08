@@ -1,0 +1,34 @@
+<h1> Restaurants </h1>
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Date</th>
+            <th>Note</th>
+            <th>Review</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="r in restaurants" > <!--affichage du tableau de restaurants-->
+            <td ng-click="selectRestaurants(r)"> {{r.nom}} </td>
+            <td> {{r.numVoie}} {{r.libVoie}} </td>
+            <td> {{r.date}} </td>
+            <td> {{r.note}} </td>
+            <td> {{r.commentaire}} </td>
+            <td ng-click="showThis()"> <!-- Il fallait cliquer sur le nom, mais j'ai mis un bouton à la place -->
+                <input type="button" value="Infos">
+            </td>
+            <td ng-show="IsVisible">
+                <detail restaus="r"></detail>
+            </td>
+            <td ng-show="IsVisible"> <!-- Et un bouton en + pour cacher les infos, ça me fait plaisir -->
+                <input type="button" value="Moins" ng-click="hideThis()">
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<!-- formulaire -->
+<monForm restaurant="restaurant"></monForm>
