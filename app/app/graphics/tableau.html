@@ -1,0 +1,41 @@
+<p><h1> Restaurants </h1>
+        <em>Cliquez sur le restaurants de votre choix pour accéder à ses détails</em></p>
+
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Date</th>
+            <th>Note</th>
+            <th>Review</th>
+            <th>Informations complémentaires</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="r in restaurants" >
+        <td ng-click="selectRestaurants(r)"> {{r.nom}} </td>
+        <td> {{r.numVoie}} {{r.libVoie}} </td>
+        <td> {{r.date}} </td>
+        <td> {{r.note}} </td>
+        <td>
+            <input type="text" name="commentaire" ng-model="r.commentaire" ng-disabled="modifCom"/>
+                <button ng-hide="modifCom" ng-click="validCom()">valider</button>
+            <button ng-click="modif()" ng-show="modifCom">modifier</button>
+        </td>
+        <td ng-click="showThis()">
+            <div  ng-hide="IsVisible"><input type="button" value="Plus"></div>
+            <div  ng-show="IsVisible"><detail restaus="r"></detail></div>
+        </td>
+        <td ng-show="IsVisible">
+            <input type="button" value="Moins" ng-click="hideThis()">
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+<br>
+<button type="button"><a href="/view3"> Créer un restaurant </a></button>
+<br>
+    <monForm restaurant="restaurant"></monForm>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>TP Restaurants </title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+    <!-- CSS, cf : https://purecss.io/ -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+  <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-route/angular-route.js"></script>
+<script src="lib/angular-resource/angular-resource.js"></script>
+<script src="core/version/version.js"></script>
+<script src="core/version/version-directive.js"></script>
+<script src="core/version/interpolate-filter.js"></script>
+
+<script src="app.js"></script>
+
+<script src="graphics/graphics.module.js"></script>
+<script src="services/services.module.js"></script>
+
+<script src="graphics/tableau.js"></script>
+<script src="graphics/detail.js"></script>
+<script src="graphics/formulaire.js"></script>
+<script src="graphics/formcreate.js"></script>
+
+<script src="services/httprestaurant.service.js"></script>
+<script src="services/restaurant.service.js"></script>
+
+<script src="view1/view1.js"></script>
+<script src="view3/view3.js"></script>
+
+<base href="/">
+
+  <body ng-controller="mainctrl">
+      <nav>
+        <li><a href="/view1">Les Restaurants</a></li>
+        <li><a href="/view3">Créer un restaurant</a></li>
+      </nav>
+    <ng-view></ng-view>
+  </body>
+
+</html>

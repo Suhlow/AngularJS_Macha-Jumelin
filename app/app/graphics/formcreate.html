@@ -1,0 +1,70 @@
+<h1> créer un restaurant</h1>
+<form class="pure-form" name="formCreation" novalidate>
+    <div>
+        <span>Nom : </span>
+        <input type="text" name="nom" ng-model="monrestaurant.nom"required/>
+        <span ng-show="formCreation.nom.$dirty && formCreation.nom.$invalid && formCreation.nom.$error.required ">
+          Champs obligatoire
+            </span>
+    </div>
+
+    <div>
+        <span>Numéro de voie : </span>
+        <input type="text" name="numVoie" ng-model="monrestaurant.numVoie" required/>
+        <span ng-show="formCreation.numVoie.$dirty && formCreation.numVoie.$invalid && formCreation.numVoie.$error.required ">
+          Champs obligatoire
+            </span>
+    </div>
+    <div>
+        <span>Libellé de la voie : </span>
+        <input type="text" name="libVoie" ng-model="monrestaurant.libVoie" required/>
+        <span ng-show="formCreation.libVoie.$dirty && formCreation.libVoie.$invalid && formCreation.libVoie.$error.required ">
+          Champs obligatoire
+            </span>
+    </div>
+
+    <div>
+        <span>Date : </span>
+        <input type="text" name="date" ng-model="monrestaurant.date" required/>
+        <span ng-show="formCreation.date.$dirty && formCreation.date.$invalid && formCreation.date.$error.required ">
+          Champs obligatoire <!-- ça s'affiche si on tape et qu'on revient en arrière -->
+            </span>
+    </div>
+
+    <div>
+        <span>Note :</span>
+        <input type="text"  name="note" ng-model="monrestaurant.note" required/>
+        <span ng-show="formCreation.note.$dirty && formCreation.note.$invalid && formCreation.note.$error.required ">
+          Champs obligatoire
+        </span>
+    </div>
+
+    <div>
+        <span>Commentaire : </span>
+        <input type="text" name="commentaire" ng-model="monrestaurant.commentaire" required/>
+        <span ng-show="formCreation.commentaire.$dirty && formCreation.commentaire.$invalid && formCreation.commentaire.$error.required ">
+          Champs obligatoire
+            </span>
+    </div>
+
+    <div>
+        <span>Propriétaire : </span>
+        <input type="text" name="proprio" ng-model="monrestaurant.proprio" required/>
+        <span ng-show="formCreation.proprio.$dirty && formCreation.proprio.$invalid && formCreation.proprio.$error.required ">
+          Champs obligatoire
+            </span>
+    </div>
+    <div>
+        <span>Contact : </span>
+        <input type="text" name="mail" ng-model="monrestaurant.mail" required/>
+        <span ng-show="formCreation.mail.$dirty && formCreation.mail.$invalid && formCreation.mail.$error.required ">
+          Entrez un email valide
+            </span>
+    </div>
+
+    <div>
+        <button type="button" ng-click="creer()" ng-disabled="formCreation.$invalid"><a href="/view1">Valider</a></button>
+        <button type="button" ng-click="annuler()">Annuler</button>
+        <button type="button"><a href="/view1">Retour aux restaurants</a></button>
+    </div>
+</form>
